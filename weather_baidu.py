@@ -44,5 +44,4 @@ class weather_baidu(object):
                 else:
                     return u"你查询的城市输入有误或者不存在呢~"
 # http://www.heweather.com/documents/cn-city-list
-# c5d6bcd9bbae419eb71bc413ea55541e
 # More data: http://apistore.baidu.com/apiworks/servicedetail/478.html
