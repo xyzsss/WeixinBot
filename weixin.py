@@ -25,7 +25,7 @@ from requests_toolbelt.multipart.encoder import MultipartEncoder
 # response module import
 libpath = os.getcwd() + '/lib'
 sys.path.append(libpath)
-import ERobot
+import ArTuling
 
 
 def catchKeyboardInterrupt(fn):
@@ -990,7 +990,7 @@ class WebWeixin(object):
 
     def _exyum(self, word):
         try:
-            r = ebot.dealContent(word)
+            r = ebot.replays(word)
             return r
         except:
             return "主人【金不夏】在帮我检查身体，晚点来找我玩啊..."
@@ -1048,6 +1048,6 @@ if __name__ == '__main__':
     import coloredlogs
     coloredlogs.install(level='DEBUG')
 
-    ebot = ERobot.ERobot()
+    ebot = ArTuling.ArTuling()
     webwx = WebWeixin()
     webwx.start()
