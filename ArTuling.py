@@ -24,7 +24,18 @@ class ArTuling(object):
                 except Exception:
                     print "The api url request failed."
                     sleep(3)
-            res_cont = json.loads(response.content)
-            return res_cont['text']
-
+            contents = json.loads(response.content)
+            if contents['code'] == 100000:  # text only
+                return contents['text']
+            elif contents['code'] == 200000:
+                return_string = u"点此查看图片" + contents['url']
+                return return_string
+            elif contents['code'] == 302000:  # news list
+                news_content = ""
+                for x in contents['list']:
+                    news_content = news_content + u"【" + x['source'] + u"】 " +\
+                        x['article'] + "\t" + x['detailurl'] + "\n"
+                return news_content
+            else:
+                return "大概，可能，也许是我累了，让我休息好不好..."
 # TODO： add user sesssion
