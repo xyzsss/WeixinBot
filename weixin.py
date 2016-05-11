@@ -21,9 +21,6 @@ from lxml import html
 # for media upload
 from mimetypes import guess_type
 from requests_toolbelt.multipart.encoder import MultipartEncoder
-# response module import
-libpath = os.getcwd() + '/lib'
-sys.path.append(libpath)
 import ArTuling
 
 
