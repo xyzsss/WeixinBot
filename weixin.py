@@ -965,7 +965,7 @@ class WebWeixin(object):
             r = ebot.replays(word)
             return r
         except:
-            return "主人【金不夏】在帮我检查身体，晚点来找我玩啊..."
+            return "主人在帮我检查身体，晚点来找我玩啊..."
 
     def _simsimi(self, word):
         key = ''
